@@ -1,4 +1,6 @@
 ;(function ($) {
+    $.fn.select2.defaults.set('amdBase', '.');
+    $.fn.select2.defaults.set('amdLanguageBase', './i18n/');
     function add_forwards(element) {
         var forward = element.attr('data-autocomplete-light-forward');
         if (forward !== undefined) {
@@ -40,6 +42,8 @@
             placeholder: '',
             minimumInputLength: 0,
             allowClear: ! $(this).is('required'),
+            language: 'ru',
+
             ajax: {
                 url: $(this).attr('data-autocomplete-light-url'),
                 dataType: 'json',
